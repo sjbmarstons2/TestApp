@@ -30,8 +30,6 @@ jobs:
       run: dotnet build ./BlazorTestApp/BlazorTestApp.csproj --no-restore
     - name: Check Azure CLI installation
       run: az --version
-    - name: Enable Azure CLI Debugging
-      run: az login --debug
     - name: Login to Azure
       uses: azure/login@v1
       with:
