@@ -21,6 +21,6 @@ jobs:
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
-      run: dotnet restore ./blazortestapp/BlazorTestApp.csproj
+      run: dotnet restore ./BlazorTestApp/BlazorTestApp.csproj
     - name: Build
-      run: dotnet build ./blazortestapp/BlazorTestApp.csproj --no-restore
+      run: dotnet build ./BlazorTestApp/BlazorTestApp.csproj --no-restore
