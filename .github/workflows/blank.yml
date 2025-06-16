@@ -28,12 +28,17 @@ jobs:
       run: dotnet restore ./BlazorTestApp/BlazorTestApp.csproj
     - name: Build
       run: dotnet build ./BlazorTestApp/BlazorTestApp.csproj --no-restore
+    - name: Check Azure CLI installation
+      run: az --version
+    - name: Enable Azure CLI Debugging
+      run: az login --debug
     - name: Login to Azure
       uses: azure/login@v1
       with:
           client-id: '852a8f7c-28d4-4aa2-981d-4f41e2fc7c7f'
           tenant-id: 'bff5dfe9-c5d8-4928-ab44-0504c399ac97'
           subscription-id: '832db642-e629-4a9a-9d0e-24863ddbec76'
+          client-secret: 'jbe8Q~cMVxux_zJOasKxXaZ2EVOXzOQzPmNKtaUv'
 
     - name: Deploy to Azure
       run: az webapp deploy --resource-group SBTEST --name SBTEST1 --src-path ./publish_output
